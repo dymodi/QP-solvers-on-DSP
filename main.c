@@ -127,7 +127,7 @@
 		 mc = (int)tmpFloat2;
 		 count_read = count_read + 1;
 		 t_f2 = post_write_uart(&token_succ,1);
-		 printf("Initialization successful!\n\r");
+		 //printf("Initialization successful!\n\r");
 		 printf("ndec: %d, mc: %d, iniFlag: %f \n\r",ndec,mc,iniFlag);
 
 		 if (iniFlag > 0.999 && iniFlag < 1.001) {
@@ -423,12 +423,12 @@
 		 MPC_end_time = Timestamp_get32();
 		 MPC_total_time = MPC_end_time - MPC_start_time - dead_time;
 		 Time_MPC = (double)(MPC_total_time);
-		 printf("%f\n",Time_MPC/freq.lo*1000);
+		 printf("time is(ms): %f\n",Time_MPC/freq.lo*1000);
 		 Time_MPC_Total += Time_MPC/freq.lo*1000;
 		 if (Time_MPC/freq.lo*1000 > Time_MPC_Worst)
 			 Time_MPC_Worst = Time_MPC/freq.lo*1000;
 
-		 printf("x is:\n\r"); show_matrix(x,ndec,1); printf("\n\r");
+		 //printf("x is:\n\r"); show_matrix(x,ndec,1); printf("\n\r");
 		 printf("iter is:%d\n\r",iterPoint[0]);
 
 		 //Here the DSP communicate with Matlab to transmite u(k) and get y(k)
